@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+	</head>
+	<body>
+		<script>
+
+			var dataArr = [10, 20, 30, 40];
+
+			var canvas = d3.select("body")
+										.append("svg")
+										.attr("width", 500)
+										.attr("height", 500)
+
+			var bars = canvas.selectAll("rect")
+											.data(dataArr)
+											.enter()
+												.append("rect")
+												.attr("width", function(d) { return d * 10; })
+												.attr("height", 50 )
+												.attr("y", function(d, i) { return i * 100 } )
+
+			// var circle = canvas.append("circle")
+			//									.attr("cx", 250)
+			//									.attr("cy", 250)
+			//									.attr("r", 100)
+			//									.attr("fill", "red");
+		</script>
+	</body>
+</html>
