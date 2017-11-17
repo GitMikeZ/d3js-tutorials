@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+	</head>
+	<body>
+		<script>
+			var canvas = d3.select("body")
+											.append("svg")
+											.attr("width", 1000)
+											.attr("height", 1000)
+
+			var group = canvas.append("g")
+									.attr("transform", "translate(200, 200)");
+
+			var r = 170;
+			var p = Math.PI * 2;
+
+			var arc = d3.svg.arc()
+								.innerRadius(r - 20)
+								.outerRadius(r)
+								.startAngle(0)
+								.endAngle(p)
+
+			group.append("path")
+					.attr("d", arc)
+
+		</script>
+	</body>
+</html>
